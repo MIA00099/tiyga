@@ -7,6 +7,7 @@
     <meta name="description" content="Tyga Style is a Kigali fashion store offering clean streetwear, polos, t-shirts, jackets, knitwear, and premium casual outfits.">
     <meta name="keywords" content="Tyga Style, Kigali fashion, Rwanda clothing, Kigali streetwear, polos, t-shirts, jackets">
     <meta name="theme-color" content="#0b0b0f">
+    <link rel="preload" as="image" href="assets/product-09-premium-halfzip-set.webp" fetchpriority="high">
     <style>
         :root {
             --bg: #f6f4f1;
@@ -353,6 +354,9 @@
         .lightbox-meta { display:flex; justify-content:space-between; align-items:center; gap:12px; color:#fff; }
         .lightbox-meta strong { font-size: 16px; }
         .lightbox-meta button { border:0; background:#fff; color:#111; border-radius:999px; padding: 10px 14px; cursor:pointer; font-weight:900; }
+
+        /* Performance: do not render heavy below-the-fold sections until they are near the viewport */
+        #about, #products, #gallery, #contact { content-visibility: auto; contain-intrinsic-size: 900px; }
         @media (max-width: 980px) {
             .announcement { display:none; }
             header { top:0; background: rgba(255,255,255,.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); padding: 12px 18px; }
@@ -391,7 +395,7 @@
 
     <header id="siteHeader">
         <a class="brand" href="#home" aria-label="Tyga Style Home">
-            <img class="brand-logo" src="assets/logo.png" alt="Tyga Style Logo">
+            <img class="brand-logo" src="assets/logo.webp" alt="Tyga Style Logo" width="280" height="280" decoding="async" fetchpriority="high">
             <span>
                 <span class="brand-name">Tyga Style</span>
                 <span class="brand-sub">Kigali Fashion</span>
@@ -433,8 +437,8 @@
                 </div>
             </div>
             <div class="hero-visual" aria-label="Tyga Style visual showcase">
-                <div class="logo-disc"><img src="assets/logo.png" alt="Tyga Style logo"></div>
-                <div class="hero-product"><img src="assets/product-09-premium-halfzip-set.png" alt="Tyga Style premium half-zip set"></div>
+                <div class="logo-disc"><img src="assets/logo.webp" alt="Tyga Style logo" width="280" height="280" decoding="async" fetchpriority="high"></div>
+                <div class="hero-product"><img src="assets/product-09-premium-halfzip-set.webp" alt="Tyga Style premium half-zip set" width="1000" height="1249" decoding="async" fetchpriority="high"></div>
                 <div class="hero-card">
                     <strong>Located in Kigali Matheus</strong>
                     <span>Call or WhatsApp <b>0783559238</b> to ask about sizes, colors, prices, and new arrivals.</span>
@@ -460,7 +464,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="assets/product-01-classic-navy-polo.png" alt="Tyga Style classic navy collar polo">
+                    <img src="assets/product-01-classic-navy-polo-thumb.webp" width="620" height="820" alt="Tyga Style classic navy collar polo" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
@@ -476,8 +480,8 @@
             <div class="product-grid">
 
                 <article class="product-card" data-category="Polo / Long Sleeve">
-                    <button class="image-button" onclick="openLightbox('assets/product-01-classic-navy-polo.png', 'Classic Navy-Collar Polo')" aria-label="View Classic Navy-Collar Polo">
-                        <img src="assets/product-01-classic-navy-polo.png" alt="Classic Navy-Collar Polo" loading="lazy">
+                    <button class="image-button" onclick="openLightbox('assets/product-01-classic-navy-polo.webp', 'Classic Navy-Collar Polo')" aria-label="View Classic Navy-Collar Polo">
+                        <img src="assets/product-01-classic-navy-polo-thumb.webp" width="620" height="820" alt="Classic Navy-Collar Polo" loading="lazy" decoding="async">
                     </button>
                     <div class="product-info">
                         <span class="product-tag">Polo / Long Sleeve</span>
@@ -488,8 +492,8 @@
                 </article>
 
                 <article class="product-card" data-category="T-Shirts">
-                    <button class="image-button" onclick="openLightbox('assets/product-02-line-art-tshirts.png', 'Minimal Line Art T-Shirts')" aria-label="View Minimal Line Art T-Shirts">
-                        <img src="assets/product-02-line-art-tshirts.png" alt="Minimal Line Art T-Shirts" loading="lazy">
+                    <button class="image-button" onclick="openLightbox('assets/product-02-line-art-tshirts.webp', 'Minimal Line Art T-Shirts')" aria-label="View Minimal Line Art T-Shirts">
+                        <img src="assets/product-02-line-art-tshirts-thumb.webp" width="620" height="820" alt="Minimal Line Art T-Shirts" loading="lazy" decoding="async">
                     </button>
                     <div class="product-info">
                         <span class="product-tag">T-Shirts</span>
@@ -500,8 +504,8 @@
                 </article>
 
                 <article class="product-card" data-category="Sleeveless">
-                    <button class="image-button" onclick="openLightbox('assets/product-03-white-sleeveless-top.png', 'White Sleeveless Top')" aria-label="View White Sleeveless Top">
-                        <img src="assets/product-03-white-sleeveless-top.png" alt="White Sleeveless Top" loading="lazy">
+                    <button class="image-button" onclick="openLightbox('assets/product-03-white-sleeveless-top.webp', 'White Sleeveless Top')" aria-label="View White Sleeveless Top">
+                        <img src="assets/product-03-white-sleeveless-top-thumb.webp" width="620" height="820" alt="White Sleeveless Top" loading="lazy" decoding="async">
                     </button>
                     <div class="product-info">
                         <span class="product-tag">Sleeveless</span>
@@ -512,8 +516,8 @@
                 </article>
 
                 <article class="product-card" data-category="Jackets">
-                    <button class="image-button" onclick="openLightbox('assets/product-04-fashion-cardigans.png', 'Black & Beige Fashion Jackets')" aria-label="View Black & Beige Fashion Jackets">
-                        <img src="assets/product-04-fashion-cardigans.png" alt="Black & Beige Fashion Jackets" loading="lazy">
+                    <button class="image-button" onclick="openLightbox('assets/product-04-fashion-cardigans.webp', 'Black & Beige Fashion Jackets')" aria-label="View Black & Beige Fashion Jackets">
+                        <img src="assets/product-04-fashion-cardigans-thumb.webp" width="620" height="820" alt="Black & Beige Fashion Jackets" loading="lazy" decoding="async">
                     </button>
                     <div class="product-info">
                         <span class="product-tag">Jackets</span>
@@ -524,8 +528,8 @@
                 </article>
 
                 <article class="product-card" data-category="Outerwear">
-                    <button class="image-button" onclick="openLightbox('assets/product-05-grey-textured-jacket.png', 'Grey Textured Jacket')" aria-label="View Grey Textured Jacket">
-                        <img src="assets/product-05-grey-textured-jacket.png" alt="Grey Textured Jacket" loading="lazy">
+                    <button class="image-button" onclick="openLightbox('assets/product-05-grey-textured-jacket.webp', 'Grey Textured Jacket')" aria-label="View Grey Textured Jacket">
+                        <img src="assets/product-05-grey-textured-jacket-thumb.webp" width="620" height="820" alt="Grey Textured Jacket" loading="lazy" decoding="async">
                     </button>
                     <div class="product-info">
                         <span class="product-tag">Outerwear</span>
@@ -536,8 +540,8 @@
                 </article>
 
                 <article class="product-card" data-category="Knitwear">
-                    <button class="image-button" onclick="openLightbox('assets/product-06-burgundy-halfzip.png', 'Burgundy Half-Zip Knit')" aria-label="View Burgundy Half-Zip Knit">
-                        <img src="assets/product-06-burgundy-halfzip.png" alt="Burgundy Half-Zip Knit" loading="lazy">
+                    <button class="image-button" onclick="openLightbox('assets/product-06-burgundy-halfzip.webp', 'Burgundy Half-Zip Knit')" aria-label="View Burgundy Half-Zip Knit">
+                        <img src="assets/product-06-burgundy-halfzip-thumb.webp" width="620" height="820" alt="Burgundy Half-Zip Knit" loading="lazy" decoding="async">
                     </button>
                     <div class="product-info">
                         <span class="product-tag">Knitwear</span>
@@ -548,8 +552,8 @@
                 </article>
 
                 <article class="product-card" data-category="T-Shirts">
-                    <button class="image-button" onclick="openLightbox('assets/product-07-colorblock-tees.png', 'Color Block Tees')" aria-label="View Color Block Tees">
-                        <img src="assets/product-07-colorblock-tees.png" alt="Color Block Tees" loading="lazy">
+                    <button class="image-button" onclick="openLightbox('assets/product-07-colorblock-tees.webp', 'Color Block Tees')" aria-label="View Color Block Tees">
+                        <img src="assets/product-07-colorblock-tees-thumb.webp" width="620" height="820" alt="Color Block Tees" loading="lazy" decoding="async">
                     </button>
                     <div class="product-info">
                         <span class="product-tag">T-Shirts</span>
@@ -560,8 +564,8 @@
                 </article>
 
                 <article class="product-card" data-category="Sweatshirt">
-                    <button class="image-button" onclick="openLightbox('assets/product-08-gap-sweatshirt.png', 'Brown GAP Sweatshirt')" aria-label="View Brown GAP Sweatshirt">
-                        <img src="assets/product-08-gap-sweatshirt.png" alt="Brown GAP Sweatshirt" loading="lazy">
+                    <button class="image-button" onclick="openLightbox('assets/product-08-gap-sweatshirt.webp', 'Brown GAP Sweatshirt')" aria-label="View Brown GAP Sweatshirt">
+                        <img src="assets/product-08-gap-sweatshirt-thumb.webp" width="620" height="820" alt="Brown GAP Sweatshirt" loading="lazy" decoding="async">
                     </button>
                     <div class="product-info">
                         <span class="product-tag">Sweatshirt</span>
@@ -572,8 +576,8 @@
                 </article>
 
                 <article class="product-card" data-category="Knitwear">
-                    <button class="image-button" onclick="openLightbox('assets/product-09-premium-halfzip-set.png', 'Premium Half-Zip Set')" aria-label="View Premium Half-Zip Set">
-                        <img src="assets/product-09-premium-halfzip-set.png" alt="Premium Half-Zip Set" loading="lazy">
+                    <button class="image-button" onclick="openLightbox('assets/product-09-premium-halfzip-set.webp', 'Premium Half-Zip Set')" aria-label="View Premium Half-Zip Set">
+                        <img src="assets/product-09-premium-halfzip-set-thumb.webp" width="620" height="820" alt="Premium Half-Zip Set" loading="lazy" decoding="async">
                     </button>
                     <div class="product-info">
                         <span class="product-tag">Knitwear</span>
@@ -596,48 +600,48 @@
                 </div>
                 <div class="gallery-grid" id="galleryGrid">
 
-                <button class="gallery-item " onclick="openLightbox('assets/product-01-classic-navy-polo.png', 'Classic Navy-Collar Polo')">
-                    <img src="assets/product-01-classic-navy-polo.png" alt="Classic Navy-Collar Polo" loading="lazy">
+                <button class="gallery-item " onclick="openLightbox('assets/product-01-classic-navy-polo.webp', 'Classic Navy-Collar Polo')">
+                    <img src="assets/product-01-classic-navy-polo-thumb.webp" width="620" height="820" alt="Classic Navy-Collar Polo" loading="lazy" decoding="async">
                     <span>Classic Navy-Collar Polo</span>
                 </button>
 
-                <button class="gallery-item " onclick="openLightbox('assets/product-02-line-art-tshirts.png', 'Minimal Line Art T-Shirts')">
-                    <img src="assets/product-02-line-art-tshirts.png" alt="Minimal Line Art T-Shirts" loading="lazy">
+                <button class="gallery-item " onclick="openLightbox('assets/product-02-line-art-tshirts.webp', 'Minimal Line Art T-Shirts')">
+                    <img src="assets/product-02-line-art-tshirts-thumb.webp" width="620" height="820" alt="Minimal Line Art T-Shirts" loading="lazy" decoding="async">
                     <span>Minimal Line Art T-Shirts</span>
                 </button>
 
-                <button class="gallery-item " onclick="openLightbox('assets/product-03-white-sleeveless-top.png', 'White Sleeveless Top')">
-                    <img src="assets/product-03-white-sleeveless-top.png" alt="White Sleeveless Top" loading="lazy">
+                <button class="gallery-item " onclick="openLightbox('assets/product-03-white-sleeveless-top.webp', 'White Sleeveless Top')">
+                    <img src="assets/product-03-white-sleeveless-top-thumb.webp" width="620" height="820" alt="White Sleeveless Top" loading="lazy" decoding="async">
                     <span>White Sleeveless Top</span>
                 </button>
 
-                <button class="gallery-item " onclick="openLightbox('assets/product-04-fashion-cardigans.png', 'Black & Beige Fashion Jackets')">
-                    <img src="assets/product-04-fashion-cardigans.png" alt="Black & Beige Fashion Jackets" loading="lazy">
+                <button class="gallery-item " onclick="openLightbox('assets/product-04-fashion-cardigans.webp', 'Black & Beige Fashion Jackets')">
+                    <img src="assets/product-04-fashion-cardigans-thumb.webp" width="620" height="820" alt="Black & Beige Fashion Jackets" loading="lazy" decoding="async">
                     <span>Black & Beige Fashion Jackets</span>
                 </button>
 
-                <button class="gallery-item " onclick="openLightbox('assets/product-05-grey-textured-jacket.png', 'Grey Textured Jacket')">
-                    <img src="assets/product-05-grey-textured-jacket.png" alt="Grey Textured Jacket" loading="lazy">
+                <button class="gallery-item " onclick="openLightbox('assets/product-05-grey-textured-jacket.webp', 'Grey Textured Jacket')">
+                    <img src="assets/product-05-grey-textured-jacket-thumb.webp" width="620" height="820" alt="Grey Textured Jacket" loading="lazy" decoding="async">
                     <span>Grey Textured Jacket</span>
                 </button>
 
-                <button class="gallery-item hidden-gallery" onclick="openLightbox('assets/product-06-burgundy-halfzip.png', 'Burgundy Half-Zip Knit')">
-                    <img src="assets/product-06-burgundy-halfzip.png" alt="Burgundy Half-Zip Knit" loading="lazy">
+                <button class="gallery-item hidden-gallery" onclick="openLightbox('assets/product-06-burgundy-halfzip.webp', 'Burgundy Half-Zip Knit')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22620%22 height=%22820%22%3E%3C/svg%3E" data-src="assets/product-06-burgundy-halfzip-thumb.webp" width="620" height="820" alt="Burgundy Half-Zip Knit" loading="lazy" decoding="async">
                     <span>Burgundy Half-Zip Knit</span>
                 </button>
 
-                <button class="gallery-item hidden-gallery" onclick="openLightbox('assets/product-07-colorblock-tees.png', 'Color Block Tees')">
-                    <img src="assets/product-07-colorblock-tees.png" alt="Color Block Tees" loading="lazy">
+                <button class="gallery-item hidden-gallery" onclick="openLightbox('assets/product-07-colorblock-tees.webp', 'Color Block Tees')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22620%22 height=%22820%22%3E%3C/svg%3E" data-src="assets/product-07-colorblock-tees-thumb.webp" width="620" height="820" alt="Color Block Tees" loading="lazy" decoding="async">
                     <span>Color Block Tees</span>
                 </button>
 
-                <button class="gallery-item hidden-gallery" onclick="openLightbox('assets/product-08-gap-sweatshirt.png', 'Brown GAP Sweatshirt')">
-                    <img src="assets/product-08-gap-sweatshirt.png" alt="Brown GAP Sweatshirt" loading="lazy">
+                <button class="gallery-item hidden-gallery" onclick="openLightbox('assets/product-08-gap-sweatshirt.webp', 'Brown GAP Sweatshirt')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22620%22 height=%22820%22%3E%3C/svg%3E" data-src="assets/product-08-gap-sweatshirt-thumb.webp" width="620" height="820" alt="Brown GAP Sweatshirt" loading="lazy" decoding="async">
                     <span>Brown GAP Sweatshirt</span>
                 </button>
 
-                <button class="gallery-item hidden-gallery" onclick="openLightbox('assets/product-09-premium-halfzip-set.png', 'Premium Half-Zip Set')">
-                    <img src="assets/product-09-premium-halfzip-set.png" alt="Premium Half-Zip Set" loading="lazy">
+                <button class="gallery-item hidden-gallery" onclick="openLightbox('assets/product-09-premium-halfzip-set.webp', 'Premium Half-Zip Set')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22620%22 height=%22820%22%3E%3C/svg%3E" data-src="assets/product-09-premium-halfzip-set-thumb.webp" width="620" height="820" alt="Premium Half-Zip Set" loading="lazy" decoding="async">
                     <span>Premium Half-Zip Set</span>
                 </button>
                 </div>
@@ -657,7 +661,7 @@
             </div>
             <div class="contact">
                 <div class="contact-card">
-                    <img src="assets/lion-mark.png" alt="Tyga Style lion mark" style="width:130px; margin-bottom: 20px;">
+                    <img src="assets/lion-mark.webp" alt="Tyga Style lion mark" width="280" height="280" loading="lazy" decoding="async" style="width:130px; margin-bottom: 20px;">
                     <div class="contact-list">
                         <div class="contact-item"><div class="contact-icon">P</div><div><strong>Phone / WhatsApp</strong><span>0783559238</span></div></div>
                         <div class="contact-item"><div class="contact-icon">A</div><div><strong>Address</strong><span>Kigali Matheus</span></div></div>
@@ -690,7 +694,7 @@
 
     <footer>
         <div class="footer-inner">
-            <div class="footer-logo"><img src="assets/logo.png" alt="Tyga Style logo"><div><strong>Tyga Style</strong><br><span style="color:rgba(255,255,255,.6);font-size:13px;">Kigali Matheus • 0783559238</span></div></div>
+            <div class="footer-logo"><img src="assets/logo.webp" alt="Tyga Style logo" width="280" height="280" loading="lazy" decoding="async"><div><strong>Tyga Style</strong><br><span style="color:rgba(255,255,255,.6);font-size:13px;">Kigali Matheus • 0783559238</span></div></div>
             <div class="footer-links">
                 <a href="#products">Products</a>
                 <a href="#gallery">Show more images</a>
@@ -723,7 +727,14 @@
         }
 
         function showMoreImages() {
-            document.querySelectorAll('.hidden-gallery').forEach(item => item.style.display = 'block');
+            document.querySelectorAll('.hidden-gallery').forEach(item => {
+                item.style.display = 'block';
+                const img = item.querySelector('img[data-src]');
+                if (img) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+            });
             document.getElementById('showMoreBtn').style.display = 'none';
         }
 
